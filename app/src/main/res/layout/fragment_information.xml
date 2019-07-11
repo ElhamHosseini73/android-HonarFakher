@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff">
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#fff">
+
+                <android.support.design.widget.AppBarLayout
+                    android:id="@+id/appBarLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/AppTheme.AppBarOverlay"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <android.support.v7.widget.Toolbar
+                        android:id="@+id/toolbar"
+                        style="@style/ToolBarStyle.Event2"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        android:background="?attr/colorPrimary"
+                        app:popupTheme="@style/AppTheme.PopupOverlay">
+
+
+                        <ImageButton
+                            android:id="@+id/btnCart"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="end"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginRight="10dp"
+                            android:background="#0000"
+                            android:src="@drawable/right_arrow"
+                            android:tint="#fff"
+                            android:visibility="gone" />
+
+
+                    </android.support.v7.widget.Toolbar>
+
+                </android.support.design.widget.AppBarLayout>
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layoutDirection="rtl"
+                    android:id="@+id/checkAddress"
+                    app:layout_constraintTop_toBottomOf="@id/appBarLayout">
+
+                    <android.support.v7.widget.AppCompatRadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="آدرس پیش فرض"
+                        android:layout_marginTop="10dp"
+                        android:checked="true"
+                        android:id="@+id/addressPishFarz"/>
+
+                    <android.support.v7.widget.AppCompatRadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="آدرس  جدید"
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/newAddress"/>
+
+
+
+                </RadioGroup>
+
+                <TextView
+
+                    android:id="@+id/familyName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="10dp"
+                    android:fontFamily="@font/iran_sans"
+                    android:text="نام و نام خانوادگی:"
+                    android:textColor="#000"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/checkAddress" />
+
+                <EditText
+
+                    android:id="@+id/edt_family_name"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/border_bg_ediitext"
+                    android:fontFamily="@font/iran_sans"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/familyName"
+                    app:layout_constraintTop_toBottomOf="@id/checkAddress" />
+
+
+                <TextView
+
+                    android:id="@+id/txtPhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/iran_sans"
+                    android:text="شماره همراه:"
+                    android:textColor="#000"
+                    android:layout_marginRight="10dp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/edt_family_name" />
+
+
+                <EditText
+
+                    android:id="@+id/edt_phone"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/border_bg_ediitext"
+                    android:fontFamily="@font/iran_sans"
+                    android:inputType="phone"
+                    android:maxLength="11"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/txtPhone"
+                    app:layout_constraintTop_toBottomOf="@id/edt_family_name" />
+
+
+                <TextView
+
+                    android:id="@+id/txtTelephone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="10dp"
+                    android:fontFamily="@font/iran_sans"
+                    android:text="تلفن ثابت:"
+                    android:textColor="#000"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/edt_phone" />
+
+                <EditText
+                    android:id="@+id/edt_telephone"
+                    android:layout_width="0dp"
+
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/border_bg_ediitext"
+                    android:fontFamily="@font/iran_sans"
+                    android:inputType="phone"
+                    android:maxLength="11"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/txtPhone"
+                    app:layout_constraintTop_toBottomOf="@id/edt_phone" />
+
+
+                <TextView
+
+                    android:id="@+id/txtaddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="10dp"
+                    android:fontFamily="@font/iran_sans"
+                    android:text="آدرس:"
+                    android:textColor="#000"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/edt_telephone" />
+
+                <EditText
+                    android:id="@+id/edt_address"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/border_bg_ediitext"
+                    android:fontFamily="@font/iran_sans"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/txtaddress"
+                    app:layout_constraintTop_toBottomOf="@id/edt_telephone" />
+
+                <TextView
+                    android:id="@+id/txtCodePost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginRight="10dp"
+                    android:text="کدپستی:"
+                    app:layout_constraintLeft_toRightOf="@id/spinnerOstan"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/edt_address" />
+
+                <EditText
+                    android:id="@+id/edt_code_post"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/border_bg_ediitext"
+                    android:fontFamily="@font/iran_sans"
+                    android:inputType="number"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/txtCodePost"
+                    app:layout_constraintTop_toBottomOf="@id/edt_address" />
+
+
+                <TextView
+                    android:id="@+id/txtostan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginRight="10dp"
+                    android:text="استان: "
+                    app:layout_constraintLeft_toRightOf="@id/spinnerOstan"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/edt_code_post" />
+
+                <Spinner
+                    android:id="@+id/spinnerOstan"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/border_bg_ediitext"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/txtostan"
+                    app:layout_constraintTop_toBottomOf="@id/edt_code_post" />
+
+
+                <TextView
+                    android:id="@+id/txtCity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginRight="10dp"
+                    android:text="شهر:"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/spinnerOstan" />
+
+                <Spinner
+                    android:id="@+id/spinnerCity"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/border_bg_ediitext"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/txtCity"
+                    app:layout_constraintTop_toBottomOf="@id/spinnerOstan" />
+
+
+                <Button
+                    android:id="@+id/btnBuy"
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp"
+                    android:background="#228B22"
+                    android:text="ثبت"
+                    android:layout_marginTop="10dp"
+                    android:textColor="#fff"
+                    app:layout_constraintTop_toBottomOf="@id/spinnerCity"
+                    app:layout_constraintLeft_toLeftOf="parent" />
+
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</layout>

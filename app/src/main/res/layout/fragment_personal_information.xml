@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="cust"
+            type="ir.rayapars.honarfakher.classes.Customer" />
+    </data>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#fff">
+
+            <android.support.design.widget.AppBarLayout
+                android:id="@+id/appBarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/AppTheme.AppBarOverlay"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    style="@style/ToolBarStyle.Event2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    app:popupTheme="@style/AppTheme.PopupOverlay">
+
+                </android.support.v7.widget.Toolbar>
+            </android.support.design.widget.AppBarLayout>
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/firstTextView"
+                android:layout_width="383dp"
+                android:layout_height="41dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/iran_sans"
+                android:gravity="center"
+                android:text="لطفا اطلاعات کاربری خود را وارد کنید"
+                android:textColor="#494848"
+                android:textSize="12dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/appBarLayout" />
+
+
+            //first field for first name
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/txtName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:hint=" نام و نام خانوادگی "
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/firstTextView">
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/editTextFirstName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="right"
+                    android:paddingRight="15dp"
+                    android:text="@{cust.full_name}"
+                    app:backgroundTint="@color/edit_text_underlines_color" />
+            </android.support.design.widget.TextInputLayout>
+
+
+            //Second field for family name
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/txtFamilyName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:hint="نام خانوادگی"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:visibility="gone"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtName">
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/editTextLastName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:gravity="right"
+                    android:paddingRight="15dp"
+                    android:text="@{cust.full_name}"
+                    android:visibility="gone"
+                    app:backgroundTint="@color/edit_text_underlines_color" />
+            </android.support.design.widget.TextInputLayout>
+
+
+            //third field for national id
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/nationalId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:hint="ایمیل"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtFamilyName">
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/editTextEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="right"
+                    android:inputType="textEmailAddress"
+                    android:paddingRight="15dp"
+                    android:text="@{cust.email}"
+                    app:backgroundTint="@color/edit_text_underlines_color" />
+
+            </android.support.design.widget.TextInputLayout>
+
+
+            //forth field for phone
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/txtPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:hint="تلفن ثابت"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/nationalId">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/editTextPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="right"
+                    android:inputType="number"
+                    android:paddingRight="15dp"
+                    android:text="@{cust.tel}"
+                    app:backgroundTint="@color/edit_text_underlines_color" />
+            </android.support.design.widget.TextInputLayout>
+
+
+            //fifth field for mobile phone
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/txtMobilePhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:hint="تلفن همراه"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtPhone">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/editTextMobilePhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="right"
+                    android:inputType="number"
+                    android:paddingRight="15dp"
+                    android:text="@{cust.mobile}"
+                    app:backgroundTint="@color/edit_text_underlines_color" />
+            </android.support.design.widget.TextInputLayout>
+
+            //address
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/txtAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:hint="آدرس"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtMobilePhone">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/editTextAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="right"
+                    android:paddingRight="15dp"
+                    android:text="@{cust.address}"
+                    app:backgroundTint="@color/edit_text_underlines_color" />
+            </android.support.design.widget.TextInputLayout>
+
+            //postal code
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/txtPostalCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:hint="کد پستی"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtAddress">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/editTextPostalCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="right"
+                    android:inputType="number"
+                    android:paddingRight="15dp"
+                    android:text="@{cust.postal_code}"
+                    app:backgroundTint="@color/edit_text_underlines_color" />
+            </android.support.design.widget.TextInputLayout>
+
+            تاریخ تولد(label)//
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/iran_sans"
+                android:paddingTop="20dp"
+                android:paddingRight="20dp"
+                android:text="تاریخ تولد"
+                android:textSize="12dp"
+                android:visibility="gone"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtPostalCode" />
+
+            روز تولد//
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/mySpinner"
+                style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="20dp"
+                android:layoutDirection="ltr"
+                android:visibility="gone"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label"></android.support.v7.widget.AppCompatSpinner>
+
+            ماه تولد//
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/mySpinner2"
+                style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="20dp"
+                android:layoutDirection="ltr"
+                android:textSize="12dp"
+                android:visibility="gone"
+                app:layout_constraintRight_toLeftOf="@id/mySpinner"
+                app:layout_constraintTop_toBottomOf="@id/label"></android.support.v7.widget.AppCompatSpinner>
+
+            سال تولد//
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/mySpinner3"
+                style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="20dp"
+                android:layoutDirection="ltr"
+                android:visibility="gone"
+                app:layout_constraintRight_toLeftOf="@id/mySpinner2"
+                app:layout_constraintTop_toBottomOf="@id/label"></android.support.v7.widget.AppCompatSpinner>
+
+            جنسیت(label)//
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/genderLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/iran_sans"
+                android:paddingRight="20dp"
+                android:text="جنسیت"
+                android:textSize="12dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mySpinner" />
+
+            <android.support.v7.widget.AppCompatRadioButton
+                android:id="@+id/maleRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:buttonTint="@color/radio_buttons_color"
+                android:checked="true"
+                android:text="مرد"
+                android:textSize="12dp"
+                app:layout_constraintRight_toLeftOf="@id/genderLabel"
+                app:layout_constraintTop_toBottomOf="@id/mySpinner2" />
+
+            <android.support.v7.widget.AppCompatRadioButton
+                android:id="@+id/femaleRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginBottom="20dp"
+                android:buttonTint="@color/radio_buttons_color"
+                android:text="زن"
+                android:textSize="12dp"
+                app:layout_constraintRight_toLeftOf="@id/maleRadioButton"
+                app:layout_constraintTop_toBottomOf="@id/mySpinner3" />
+
+            محل سکونت(label)//
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/cityLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="25dp"
+                android:fontFamily="@font/iran_sans"
+                android:paddingTop="20dp"
+                android:paddingRight="20dp"
+                android:text="محل سکونت"
+                android:textSize="12dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/genderLabel" />
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/mySpinner4"
+                style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="25dp"
+                android:layoutDirection="rtl"
+                android:textSize="10sp"
+                app:layout_constraintRight_toLeftOf="@id/cityLabel"
+                app:layout_constraintTop_toBottomOf="@id/maleRadioButton"></android.support.v7.widget.AppCompatSpinner>
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/mySpinner5"
+                style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="20dp"
+                android:layoutDirection="rtl"
+                android:textSize="10sp"
+                app:layout_constraintRight_toLeftOf="@id/mySpinner4"
+                app:layout_constraintTop_toBottomOf="@id/femaleRadioButton"></android.support.v7.widget.AppCompatSpinner>
+
+
+            خبرنامه(label)//
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/newsletterLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/iran_sans"
+                android:paddingTop="20dp"
+                android:paddingRight="20dp"
+                android:text="دریافت خبرنامه"
+                android:textSize="12dp"
+                android:visibility="gone"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cityLabel" />
+
+            <android.support.v7.widget.AppCompatRadioButton
+                android:id="@+id/yesRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:buttonTint="@color/radio_buttons_color"
+                android:checked="true"
+                android:text="بلی"
+                android:textSize="12dp"
+                android:visibility="gone"
+                app:layout_constraintRight_toLeftOf="@id/newsletterLabel"
+                app:layout_constraintTop_toBottomOf="@id/mySpinner4" />
+
+            <android.support.v7.widget.AppCompatRadioButton
+                android:id="@+id/noRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginBottom="20dp"
+                android:buttonTint="@color/radio_buttons_color"
+                android:text="خیر"
+                android:textSize="12dp"
+                android:visibility="gone"
+                app:layout_constraintRight_toLeftOf="@id/yesRadioButton"
+                app:layout_constraintTop_toBottomOf="@id/mySpinner5" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/greenBtn"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="30dp"
+                android:background="#61B361"
+                android:fontFamily="@font/iran_sans"
+                android:text="ثبت اطلاعات"
+                android:textColor="#fff"
+                android:textSize="15dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/noRadioButton" />
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</layout>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="oli"
+            type="ir.rayapars.honarfakher.classes.OrdersList" />
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        app:cardElevation="2dp"
+        app:cardUseCompatPadding="true">
+
+        <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            //invoice number
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/invoiceLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginRight="10dp"
+                android:text="شماره پیگیری"
+                android:textColor="#6E6D6D"
+                android:textDirection="rtl"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="325dp" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/invoice"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="7dp"
+                android:text="@{oli.tracking_number}"
+                android:textColor="#6E6D6D"
+                android:textDirection="ltr"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            //tracking number
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/orderNumberLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginRight="10dp"
+                android:text="شماره فاکتور"
+                android:textColor="#6E6D6D"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/invoiceLabel" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/orderNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="7dp"
+                android:text="@{oli.invoice_number}"
+                android:textColor="#6E6D6D"
+                android:textDirection="ltr"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/invoice" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/goToDetailsTextView"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginTop="7dp"
+                android:background="@drawable/antique_white_border"
+                android:gravity="center_vertical"
+                android:paddingRight="9dp"
+                android:text=" جزئیات سفارش  >"
+                android:textColor="#0080FF"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/orderNumber" />
+
+
+            //date
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/dateLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginRight="10dp"
+                android:text="تاریخ"
+                android:textColor="#6E6D6D"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/goToDetailsTextView" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/date"
+                setDate="@{oli.order_date}"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="7dp"
+                android:textColor="#6E6D6D"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/goToDetailsTextView" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/time"
+                setTime="@{oli.order_date}"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="7dp"
+                android:textColor="#6E6D6D"
+                app:layout_constraintLeft_toRightOf="@+id/date"
+                app:layout_constraintTop_toBottomOf="@id/goToDetailsTextView" />/>
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/costLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginRight="10dp"
+                android:text="مبلغ کل"
+                android:textColor="#6E6D6D"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/dateLabel" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/cost"
+                setTextWithCurrency="@{oli.total_price}"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="7dp"
+                android:textColor="#3DE73D"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/date" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/statusLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="وضعیت پرداخت"
+                android:textColor="#6E6D6D"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/costLabel" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/status"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="#6E6D6D"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cost" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.CardView>
+</layout>

@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="var"
+            type="ir.rayapars.honarfakher.classes.ProductDetails" />
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:padding="3dp"
+        app:cardElevation="3dp"
+        app:cardUseCompatPadding="true">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/image"
+                imageUrl="@{var.image.size>0?var.image.get(0).src:null}"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="20dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/englishTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="20dp"
+                android:text="@{var.title}"
+                app:layout_constraintRight_toLeftOf="@+id/image"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/persianTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{var.title2}"
+                android:textColor="#808080"
+                app:layout_constraintRight_toLeftOf="@+id/image"
+                app:layout_constraintTop_toBottomOf="@+id/englishTitle" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_border"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layoutDirection="rtl"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent">
+
+                <ImageView
+                    android:id="@+id/add"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/add"
+                    android:tint="#0f9d58" />
+
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#333333"/>
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/numberOfProducts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginRight="15dp"
+                    android:text="@{String.valueOf(var.numberOfProduct)}" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#333333"/>
+
+
+                <ImageView
+                    android:id="@+id/min"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/minussymbol"
+                    android:tint="#cc0000" />
+
+            </LinearLayout>
+
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/price"
+                setPrice="@{var.final_price}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:textColor="#808080"
+                app:layout_constraintRight_toLeftOf="@+id/image"
+                app:layout_constraintTop_toBottomOf="@+id/englishTitle" />
+
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/txtpriceFinal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:fontFamily="@font/iran_sans"
+                android:text="قیمت نهایی:"
+                android:textColor="#000"
+                app:layout_constraintRight_toLeftOf="@+id/image"
+                app:layout_constraintTop_toBottomOf="@+id/price" />
+
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/priceFinal"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:fontFamily="@font/iran_sans"
+                android:textColor="#000"
+                app:layout_constraintRight_toLeftOf="@+id/txtpriceFinal"
+                app:layout_constraintTop_toBottomOf="@+id/price" />
+
+
+            <android.support.v7.widget.AppCompatTextView
+
+                android:id="@+id/garanti"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:visibility="gone"
+                app:layout_constraintRight_toLeftOf="@+id/image"
+
+                 />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/seller"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:visibility="gone"
+                app:layout_constraintRight_toLeftOf="@+id/image"
+                app:layout_constraintTop_toBottomOf="@+id/garanti" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/quantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:visibility="gone"
+                app:layout_constraintRight_toLeftOf="@+id/image"
+                app:layout_constraintTop_toBottomOf="@+id/seller" />
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintLeft_toRightOf="@+id/quantity"
+                app:layout_constraintRight_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/seller">
+
+            </Spinner>
+
+
+            <ImageView
+                android:id="@+id/removeItemFromTheCart"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginBottom="3dp"
+                android:paddingLeft="6dp"
+                android:paddingRight="6dp"
+                android:src="@drawable/ic_delete_black_24dp"
+                android:tint="#f2ac0f0f"
+                app:layout_constraintLeft_toLeftOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+
+</layout>

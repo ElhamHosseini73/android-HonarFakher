@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#eee">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            tools:context=".activities.MainActivity"
+            tools:showIn="@layout/app_bar_main">
+
+            <com.daimajia.slider.library.SliderLayout
+                android:id="@+id/slider"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/categoryRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/slider" />
+
+            <ImageView
+                android:id="@+id/spes"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/ic_special_offer"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/categoryRecyclerView" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:layout_marginLeft="15dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@id/spes">
+
+                <TextView
+                    android:id="@+id/timerS"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:textColor="#fff"
+                    android:textSize="20dp"
+                    android:background="@drawable/gray_bavk_radius" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text=" : "
+                    android:gravity="center"
+                    android:textColor="#666"
+                    android:textSize="18dp"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:id="@+id/timerM"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:textColor="#fff"
+                    android:textSize="20dp"
+                    android:background="@drawable/gray_bavk_radius" />
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:text=" : "
+                  android:gravity="center"
+                  android:textColor="#666"
+                  android:textSize="18dp"
+                  android:layout_height="match_parent" />
+                <TextView
+                    android:id="@+id/timerH"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:textColor="#fff"
+                    android:textSize="20dp"
+                    android:background="@drawable/gray_bavk_radius" />
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/wondersRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/spes" />
+
+            <ImageView
+                android:id="@+id/recentImage"
+                android:layout_width="500dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="50dp"
+                android:src="@drawable/recent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/wondersRecyclerView" />
+
+            <ImageView
+                android:id="@+id/runnerImage"
+                android:layout_width="100dp"
+                android:layout_height="200dp"
+
+                android:src="@drawable/runner"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/wondersRecyclerView" />
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/wondersRecyclerView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/recentImage" />
+
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v4.widget.NestedScrollView>
+</layout>

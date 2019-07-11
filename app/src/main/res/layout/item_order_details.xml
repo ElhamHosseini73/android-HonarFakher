@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="var"
+            type="ir.rayapars.honarfakher.classes.OrderDetails" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="3dp">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/style_item_product">
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/productImage"
+                imageUrl="@{var.image}"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:background="#fff"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/productName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="6dp"
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:fontFamily="@font/iran_sans"
+                android:gravity="right"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:text="@{var.product_name}"
+                android:textColor="#4b4545"
+                android:textSize="12dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/productImage" />
+
+            <LinearLayout
+                android:id="@+id/fakeLine"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="9dp"
+                android:background="#eee"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/productName" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/quantityLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:fontFamily="@font/iran_sans"
+                android:text="تعداد:"
+                android:textColor="#6F6D6D"
+                android:textSize="12dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fakeLine" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/quantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/iran_sans"
+                android:text="@{var.product_quantity}"
+                android:textColor="#4b4545"
+                android:textSize="12dp"
+                app:layout_constraintRight_toLeftOf="@+id/quantityLabel"
+                app:layout_constraintTop_toBottomOf="@id/fakeLine" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/totalPriceLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:layout_marginRight="5dp"
+                android:fontFamily="@font/iran_sans"
+                android:text="قیمت:"
+                android:textColor="#6F6D6D"
+                android:textSize="12dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/quantityLabel" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/totalPrice"
+                setTextWithCurrency="@{var.final_price}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:layout_marginRight="5dp"
+                android:fontFamily="@font/iran_sans"
+                app:layout_constraintRight_toLeftOf="@+id/totalPriceLabel"
+                app:layout_constraintTop_toBottomOf="@id/quantity" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </LinearLayout>
+</layout>
