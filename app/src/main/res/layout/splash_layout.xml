@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
+    android:background="@color/backgroundmain"
     android:layoutDirection="ltr"
     android:orientation="vertical">
 
@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="#e72f31"
+        android:background="@color/backgroundmain"
         android:gravity="center">
 
         <ImageView
@@ -29,7 +29,7 @@
         <ImageView
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:src="@drawable/tt"/>
+            android:src="@drawable/logonew"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -46,6 +46,7 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginTop="40dp"
+            android:background="@xml/progress"
             android:layout_gravity="bottom|center"/>
 
     </LinearLayout>

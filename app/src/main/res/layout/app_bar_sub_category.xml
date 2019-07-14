@@ -121,6 +121,7 @@
                     android:layout_height="130dp"
                     android:layout_marginTop="20dp"
                     android:src="@drawable/test"
+                    android:visibility="gone"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/cardView" />
@@ -133,6 +134,7 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginRight="7dp"
                     app:cardElevation="3dp"
+                    android:visibility="gone"
                     app:cardUseCompatPadding="true"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
@@ -158,6 +160,7 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginRight="7dp"
                     app:cardElevation="3dp"
+                    android:visibility="gone"
                     app:cardUseCompatPadding="true"
                     app:layout_constraintLeft_toRightOf="@+id/card4"
                     app:layout_constraintRight_toRightOf="parent"
@@ -185,6 +188,7 @@
                     android:layout_marginLeft="7dp"
                     android:layout_marginRight="2dp"
                     app:cardElevation="3dp"
+                    android:visibility="gone"
                     app:cardUseCompatPadding="true"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toLeftOf="@+id/card3"
@@ -212,6 +216,7 @@
                     android:layout_marginLeft="7dp"
                     android:layout_marginRight="7dp"
                     app:cardElevation="3dp"
+                    android:visibility="gone"
                     app:cardUseCompatPadding="true"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
@@ -239,6 +244,7 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginRight="7dp"
                     app:cardElevation="3dp"
+                    android:visibility="gone"
                     app:cardUseCompatPadding="true"
                     app:layout_constraintLeft_toRightOf="@+id/card4"
                     app:layout_constraintRight_toRightOf="parent"
@@ -266,6 +272,7 @@
                     android:layout_marginLeft="7dp"
                     android:layout_marginRight="2dp"
                     app:cardElevation="3dp"
+                    android:visibility="gone"
                     app:cardUseCompatPadding="true"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toLeftOf="@+id/card3"
@@ -278,11 +285,11 @@
                         android:layout_height="110dp"
                         android:scaleType="fitXY"
                         android:src="@drawable/test4"
+                        android:visibility="gone"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
-
 
                 </android.support.v7.widget.CardView>
 
@@ -292,6 +299,7 @@
                     android:layout_height="130dp"
                     android:layout_marginTop="5dp"
                     android:src="@drawable/test7"
+                    android:visibility="gone"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/card7" />
